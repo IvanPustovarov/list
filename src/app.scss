@@ -1,0 +1,28 @@
+.table {
+  &__condition {
+    display: flex;
+    height: 3rem;
+    padding-top: 14px;
+    border-bottom: 2px solid rgb(146, 146, 146);
+    &__data {
+      flex-grow: 2;
+      text-align: center;
+    }
+    &__type {
+      flex-grow: 3;
+      text-align: center;
+    }
+    &__account {
+      flex-grow: 3;
+      text-align: center;
+    }
+    &__status {
+      flex-grow: 2;
+      text-align: center;
+    }
+  }
+  &__tasks {
+  }
+  &__pagination {
+  }
+}

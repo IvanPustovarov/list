@@ -1,0 +1,68 @@
+.task {
+  width: 100%;
+  height: 5rem;
+  display: flex;
+  padding-top: 1rem;
+  border-bottom: 2px solid rgb(146, 146, 146);
+  &__data-info {
+    width: 20%;
+    &_data {
+      color: rgb(146, 146, 146);
+    }
+    &_info {
+    }
+  }
+  &__author-type {
+    width: 30%;
+    &_author {
+      color: rgb(146, 146, 146);
+    }
+    &_type {
+    }
+  }
+  &__account-terminal {
+    width: 30%;
+    &_terminal {
+      color: rgb(146, 146, 146);
+    }
+  }
+  &__status {
+    display: flex;
+    width: 20%;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    height: 2rem;
+    &_new {
+      padding-top: 0.2rem;
+      width: 8rem;
+      background-color: rgb(219, 72, 72);
+      border-radius: 0.25rem;
+    }
+    &_assigned_to {
+      padding-top: 0.2rem;
+      width: 8rem;
+      background-color: rgb(196, 196, 58);
+      border-radius: 0.25rem;
+    }
+    &_started {
+      padding-top: 0.2rem;
+      width: 8rem;
+      background-color: rgb(57, 57, 209);
+      border-radius: 0.25rem;
+    }
+    &_declined {
+      padding-top: 0.2rem;
+      width: 8rem;
+      background-color: black;
+      border-radius: 0.25rem;
+    }
+    &_completed {
+      padding-top: 0.2rem;
+      width: 8rem;
+      background-color: rgb(10, 94, 10);
+      border-radius: 0.25rem;
+    }
+  }
+}
