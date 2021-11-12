@@ -1,8 +1,13 @@
+import React, { useState } from "react";
 import "./app.scss";
 import data from "./data.json";
+import { Outlet, Link } from "react-router-dom";
 import Task from "./components/Task";
+import Pagination from "./components/Pagination";
 
 const App = () => {
+  const [page, setPage] = useState(1);
+
   return (
     <div className="table">
       <div className="table__condition">
@@ -13,10 +18,15 @@ const App = () => {
       </div>
       <div className="table__tasks">
         {data.map((task) => (
-          <Task task={task} key={task.id} />
+          <Link to={`/${task.id}`} key={task.id} className="table__tasks__link">
+            <Task task={task} />
+          </Link>
         ))}
       </div>
-      <div className="table__pagination"></div>
+      <div className="table__pagination">
+        <Pagination length={data.length} settingPage={page} />
+      </div>
+      <Outlet />
     </div>
   );
 };

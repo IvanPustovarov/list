@@ -4,6 +4,7 @@
     height: 3rem;
     padding-top: 14px;
     border-bottom: 2px solid rgb(146, 146, 146);
+    font-weight: bold;
     &__data {
       flex-grow: 2;
       text-align: center;
@@ -22,7 +23,18 @@
     }
   }
   &__tasks {
+    :link {
+      color: black;
+    }
+    :visited {
+      color: black;
+    }
+    &__link {
+      text-decoration: none;
+    }
   }
   &__pagination {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
   }
 }
