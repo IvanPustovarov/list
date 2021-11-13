@@ -1,17 +1,25 @@
-import React, { useState } from "react";
+import React from "react";
 import "../style/pagination.scss";
-const Pagination = ({ length }) => {
-  const [paginationRange, setPaginationRange] = useState("25");
-  const [page, setPage] = useState(1);
-
+const Pagination = ({
+  length,
+  settingPage,
+  page,
+  paginationRange,
+  settingPaginationRange,
+}) => {
   const handleChangeValue = (e) => {
-    setPaginationRange(e.target.value);
+    const range = e.target.value;
+    settingPaginationRange(range);
   };
 
-  const handleChangePage = (direction) => {
-    //TODO: logic for page and button
-    if (direction === "prev") setPage(page - 1);
-    if (direction === "next") setPage(page + 1);
+  const setUpPageNext = () => {
+    const maxPage = length / paginationRange;
+    if (page < maxPage) settingPage(page + 1);
+  };
+
+  const setUpPagePrev = () => {
+    const minPage = 1;
+    if (page > minPage) settingPage(page - 1);
   };
 
   return (
@@ -19,9 +27,9 @@ const Pagination = ({ length }) => {
       {`${page > 1 ? paginationRange * page - paginationRange : page}-${
         page * paginationRange
       }`}
-      <button onClick={() => handleChangePage("prev")}>Prev</button>
+      <button onClick={setUpPagePrev}>Prev</button>
       {page}
-      <button onClick={() => handleChangePage("next")}>Next</button>
+      <button onClick={setUpPageNext}>Next</button>
       <select
         name="select"
         value={paginationRange}
@@ -31,7 +39,6 @@ const Pagination = ({ length }) => {
           25
         </option>
         <option value="50">50</option>
-        <option value="75">75</option>
         <option value="100">100</option>
       </select>
     </div>

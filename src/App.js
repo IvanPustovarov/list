@@ -7,6 +7,22 @@ import Pagination from "./components/Pagination";
 
 const App = () => {
   const [page, setPage] = useState(1);
+  const [paginationRange, setPaginationRange] = useState("25");
+
+  const visibleRange = (page, paginationRange) => {
+    return data.slice(
+      paginationRange * page - paginationRange,
+      page * paginationRange
+    );
+  };
+
+  const settingPage = (page) => {
+    setPage(page);
+  };
+
+  const settingPaginationRange = (paginationRange) => {
+    setPaginationRange(paginationRange);
+  };
 
   return (
     <div className="table">
@@ -17,14 +33,20 @@ const App = () => {
         <div className="table__condition__status">Статус </div>
       </div>
       <div className="table__tasks">
-        {data.map((task) => (
+        {visibleRange(page, paginationRange).map((task) => (
           <Link to={`/${task.id}`} key={task.id} className="table__tasks__link">
             <Task task={task} />
           </Link>
         ))}
       </div>
       <div className="table__pagination">
-        <Pagination length={data.length} settingPage={page} />
+        <Pagination
+          length={data.length}
+          settingPage={settingPage}
+          settingPaginationRange={settingPaginationRange}
+          page={page}
+          paginationRange={paginationRange}
+        />
       </div>
       <Outlet />
     </div>

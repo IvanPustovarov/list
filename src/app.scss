@@ -8,18 +8,28 @@
     &__data {
       flex-grow: 2;
       text-align: center;
+      display: flex;
+      align-items: center;
+      padding-left: 1rem;
     }
     &__type {
       flex-grow: 3;
       text-align: center;
+      display: flex;
+      align-items: center;
     }
     &__account {
       flex-grow: 3;
       text-align: center;
+      display: flex;
+      align-items: center;
     }
     &__status {
       flex-grow: 2;
       text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
   }
   &__tasks {
