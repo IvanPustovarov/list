@@ -17,14 +17,33 @@
     width: 30%;
     &_author {
       color: rgb(146, 146, 146);
+      min-width: 0;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
     }
     &_type {
+      min-width: 0;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
     }
   }
   &__account-terminal {
     width: 30%;
+
     &_terminal {
       color: rgb(146, 146, 146);
+      min-width: 0;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    &_account {
+      min-width: 0;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
     }
   }
   &__status {
