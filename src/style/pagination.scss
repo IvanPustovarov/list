@@ -2,4 +2,36 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  &__task-number {
+    width: 5rem;
+    font-size: 18px;
+  }
+  &__button-page {
+    font-size: 18px;
+    font-weight: bold;
+    button {
+      border-width: 0;
+      cursor: pointer;
+      width: 3rem;
+      background-color: rgb(88, 158, 106);
+      border-radius: 0.2rem;
+      height: 2rem;
+      margin: 0 1rem 0 1rem;
+    }
+  }
+  &__select {
+    width: 5rem;
+    margin-left: 3rem;
+
+    select {
+      font-size: 16px;
+      border-width: 0;
+      cursor: pointer;
+      height: 2rem;
+      background-color: rgb(38, 68, 58);
+      width: 4rem;
+      color: white;
+      border-radius: 0.3rem;
+    }
+  }
 }

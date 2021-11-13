@@ -24,23 +24,27 @@ const Pagination = ({
 
   return (
     <div className="pagination">
-      {`${page > 1 ? paginationRange * page - paginationRange : page}-${
-        page * paginationRange
-      }`}
-      <button onClick={setUpPagePrev}>Prev</button>
-      {page}
-      <button onClick={setUpPageNext}>Next</button>
-      <select
-        name="select"
-        value={paginationRange}
-        onChange={handleChangeValue}
-      >
-        <option value="25" defaultValue>
-          25
-        </option>
-        <option value="50">50</option>
-        <option value="100">100</option>
-      </select>
+      <div className="pagination__task-number">{`${
+        page > 1 ? paginationRange * page - paginationRange : page
+      }-${page * paginationRange}`}</div>
+      <div className="pagination__button-page">
+        <button onClick={setUpPagePrev}>Prev</button>
+        {page}
+        <button onClick={setUpPageNext}>Next</button>
+      </div>
+      <div className="pagination__select">
+        <select
+          name="select"
+          value={paginationRange}
+          onChange={handleChangeValue}
+        >
+          <option value="25" defaultValue>
+            25
+          </option>
+          <option value="50">50</option>
+          <option value="100">100</option>
+        </select>
+      </div>
     </div>
   );
 };
